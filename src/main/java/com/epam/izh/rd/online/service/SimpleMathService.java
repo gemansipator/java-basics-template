@@ -1,5 +1,7 @@
 package com.epam.izh.rd.online.service;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.CompareGenerator;
+
 public class SimpleMathService implements MathService {
 
     /**
@@ -13,7 +15,16 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int compare(int value1, int value2) {
-         return 0;
+
+        if (value1 == value2){
+            return 0;
+        }
+        else if (value1 < value2) {
+            return -1;
+        }
+        else {
+            return 1;
+        }
 
     }
 
