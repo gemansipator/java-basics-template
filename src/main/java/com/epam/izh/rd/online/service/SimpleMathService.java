@@ -70,6 +70,7 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] getEvenDigits(int[] values) {
+
         return new int[]{};
     }
 
@@ -125,6 +126,13 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] reverseArray(int[] values) {
-        return new int[]{};
+        for ( int i = 0, j = values.length - 1; i < j; ++i, --j ) {
+            int tmp = values[i];
+            values[i] = values[j];
+            values[j] = tmp;
+        }
+        return values;
+
+
     }
 }
