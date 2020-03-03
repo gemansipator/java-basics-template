@@ -13,8 +13,8 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int compare(int value1, int value2) {
+         return 0;
 
-        return -2;
     }
 
     /**
@@ -41,11 +41,11 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int sum(int[] values) {
-        int rt =0;
-        for (int i = 1; i <= values.length ; i++)
-            rt = rt + values[i];
+        int rr =0;
+        for (int i = 0; i < values.length ; i++)
+            rr = rr + values[i];
 
-        return rt;
+        return rr;
     }
 
     /**
