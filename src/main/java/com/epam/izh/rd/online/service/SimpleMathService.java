@@ -70,8 +70,20 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] getEvenDigits(int[] values) {
-
-        return new int[]{};
+/*        int [] evenArr = new int [values.length] ;
+       int k = 0;
+       String arrToStr = "";
+       for (int i = 0; i < evenArr.length; i++) {
+           for (int j = k; j < values.length; j++) {
+               k++;
+               if (values [j] % 2 == 0) {
+                   evenArr [i] = values [j];
+                   break;
+               }
+           }
+           arrToStr = arrToStr + evenArr [i] + "; ";
+       }*/
+        return values; // НЕ ДОДЕЛАЛ!!!
     }
 
     /**
@@ -81,7 +93,11 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFactorial(int initialVal) {
-        return -1L;
+        int result = 1;
+        for (int i = 1; i <=initialVal; i ++){
+            result = result*i;
+        }
+        return result;
     }
 
     /**
@@ -96,7 +112,14 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFibonacci(int number) {
-        return -1L;
+        if (number <= 1) return number;
+        int previous = 0, next = 1, sum;
+        for (int i = 2; i <= number; i++) {
+            sum = previous;
+            previous = next;
+            next = sum + previous;
+        }
+        return next;
     }
 
     /**
@@ -105,8 +128,23 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] sort(int[] values) {
-        return new int[]{};
+        boolean isSorted = false;
+        int buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < values.length-1; i++) {
+                if(values[i] > values[i+1]){
+                    isSorted = false;
+
+                    buf = values[i];
+                    values[i] = values[i+1];
+                    values[i+1] = buf;
+                }
+            }
+        }
+        return values;
     }
+
 
     /**
      * Метод определяет, является ли заданное число простым.
@@ -142,3 +180,4 @@ public class SimpleMathService implements MathService {
 
     }
 }
+
